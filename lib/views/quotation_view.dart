@@ -1,5 +1,5 @@
 import 'package:agarwal_packers/app/database.dart';
-import 'package:agarwal_packers/services/pdf_service.dart';
+import 'package:agarwal_packers/services/quotation_pdf_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
@@ -34,8 +34,8 @@ class _QuotationViewState extends State<QuotationView> {
       "Address": addressController.text,
       "Email": emailController.text,
       "Mobile": mobileController.text,
-      "Transport_From": transportFromController.text,
-      "Transport_To": transportToController.text,
+      "Transport From": transportFromController.text,
+      "Transport To": transportToController.text,
       "Freight Charges": freightChargesController.text,
       "Car Transportation Charges": transportationChargesController.text,
       "Loading Charges": loadingChargesController.text,
@@ -64,14 +64,14 @@ class _QuotationViewState extends State<QuotationView> {
 
   String? quotationId = "QTZ12345";
   String? vehicleType = "Part Load";
-  String? nameValue = "";
+  String? nameValue = "Akshay";
   String? companyNameValue = "N/A";
   String? gstNumberValue = "N/A";
-  String? addressValue = "";
-  String? emailValue = "";
-  String? mobileValue = "";
-  String? transportFromValue = "";
-  String? transportToValue = "";
+  String? addressValue = "Balawala, Dehradun";
+  String? emailValue = "akshunegi0@gmail.com";
+  String? mobileValue = "7088839967";
+  String? transportFromValue = "Dehradun";
+  String? transportToValue = "Delhi";
   num? freightChargesValue = 0;
   num? transportationChargesValue = 0;
   num? loadingChargesValue = 0;
@@ -429,8 +429,8 @@ class _QuotationViewState extends State<QuotationView> {
                                 "Address": addressController.text,
                                 "Email": emailController.text,
                                 "Mobile": mobileController.text,
-                                "Transport_From": transportFromController.text,
-                                "Transport_To": transportToController.text,
+                                "Transport From": transportFromController.text,
+                                "Transport To": transportToController.text,
                                 "Freight Charges":
                                     freightChargesController.text,
                                 "Car Transportation Charges":
@@ -454,7 +454,7 @@ class _QuotationViewState extends State<QuotationView> {
                                 "Total Amount": totalAmount,
                               });
                               await pdfService.savePdf(
-                                  "Quotation_${nameValue!}", data);
+                                  "Quotation_$quotationId", data);
                               await uploadQuotationData();
                             } else {
                               Fluttertoast.showToast(
