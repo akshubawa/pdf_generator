@@ -159,7 +159,10 @@ class _QuotationViewState extends State<QuotationView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Agarwal Packers"),
+        title: const Text(
+          "Quotation",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: SafeArea(
           bottom: true,
